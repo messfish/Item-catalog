@@ -1,0 +1,20 @@
+<html>
+
+<body>
+
+<h1>This is the catalog of the bookshelves.</h1>
+
+<div>
+
+{% for bookshelf in bookshelves %}
+
+	<a href="{{url_for('Bookshelf', bookshelf_id = bookshelf.id)}}">
+	%s</a> % bookshelf.name
+
+{% endfor %}
+
+</div>
+
+</body>
+
+</html>
