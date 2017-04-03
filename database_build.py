@@ -10,6 +10,7 @@ Base = declarative_base()
 
 engine = create_engine('sqlite:///minilibrary.db')
 Base.metadata.create_all(engine)
+Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind = engine)
 session = DBSession()
