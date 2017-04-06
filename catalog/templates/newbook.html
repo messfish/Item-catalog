@@ -1,0 +1,32 @@
+<html>
+
+<body>
+
+<h1> New Book </h1>
+
+<form action = "{{url_for('newBook', bookshelf_id = bookshelf_id)}}" method = "POST">
+
+<p> Name: </p>
+
+<input type='text' size='30' name='name'>
+
+</br>
+</br>
+
+<textarea name='descreption' rows='10' cols='70'></textarea>
+
+</br>
+</br>
+
+<input type='text' size='10' name='price'>
+
+</br>
+</br>
+
+<input type='submit' value='Create Book'>
+
+</form>
+
+</body>
+
+</html>

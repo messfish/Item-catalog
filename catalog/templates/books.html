@@ -1,0 +1,47 @@
+<html>
+
+<body>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{url_for('static', filename='bookstyles.css')}}">
+</head>
+
+<h1>{{bookshelf.category}}</h1>
+
+<!-- here is the code for the flashing message -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+	<li><strong>{{message}}</strong></li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<a href="{{url_for('newBook', bookshelf_id = bookshelf.id)}}"> Create New Book </a>
+
+{% for book in books %}
+	
+<div>
+
+<p>{{book.name}}</p>
+
+<p>{{book.descreption}}</p>
+
+<p>{{book.price}}</p>
+
+<a href = "{{url_for('editBook', bookshelf_id = bookshelf.id, book_id = book.id)}}">Edit</a>
+
+</br>
+
+<a href = "{{url_for('deleteBook', bookshelf_id = bookshelf.id, book_id = book.id)}}">Delete</a>
+
+</div>
+
+{% endfor %}
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<html>
+<body>
+
+<h1> Are you sure you want to delete book {{book.name}} ? </h1>
+
+<form action="{{url_for('deleteBook', bookshelf_id = bookshelf_id, book_id = book.id)}}" method = "POST">
+
+<input type="submit" value="Sure">
+
+</form>
+
+<a href="{{url_for('Bookshelf', bookshelf_id = bookshelf_id)}}"> Cancel </a>
+
+</body>
+</html>
